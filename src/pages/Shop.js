@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 const Shop = () => {
   const { data, isLoading, error } = useGetMealsByNameQuery("");
   const numberOfMeals = useSelector(selectNumberOfMealsToShow);
+
   if (isLoading) return <div>Loading................</div>;
   if (error) return <h1>{error}</h1>;
   const mealsToShow = data.meals.slice(0, numberOfMeals);
